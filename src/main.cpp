@@ -2,7 +2,7 @@
 #include "include/JobScheduler.h"
 
 int main() {
-    JobScheduler scheduler(5); // Create a scheduler with 3 worker threads
+    JobScheduler scheduler(2); // Create a scheduler with 3 worker threads
 
     // Adding jobs to the scheduler
     for (int i = 1; i <= 10; ++i) {

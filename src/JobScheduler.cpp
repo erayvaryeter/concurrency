@@ -30,7 +30,6 @@ void JobScheduler::addJob(const Job& job) {
         std::lock_guard<std::mutex> lock(m_queueMutex);
         m_jobs.push(job);
     }
-    m_semaphore.notify();
 }
 
 int JobScheduler::getJobCounter() const {
