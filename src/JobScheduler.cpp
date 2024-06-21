@@ -1,7 +1,7 @@
 #include "include/JobScheduler.h"
 
 JobScheduler::JobScheduler(int numWorkers) : 
-    m_semaphore(numWorkers), 
+    m_semaphore(1),
     m_jobCounter(0) 
 {
     for (int i = 0; i < numWorkers; ++i) {

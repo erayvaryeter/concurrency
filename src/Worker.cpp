@@ -38,7 +38,6 @@ void Worker::processJobAsync(const Job& job) {
         std::this_thread::sleep_for(std::chrono::milliseconds(job.jobDurationMs));
         m_semaphore.wait();
         std::cout << "Worker " << m_workerID << " finished job " << job.jobName << " (ID: " << job.jobID << ")" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(2));
         m_semaphore.notify();
         m_jobCounter++;
         m_lastTimePoint = std::chrono::high_resolution_clock::now();
